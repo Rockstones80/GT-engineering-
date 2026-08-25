@@ -23,11 +23,11 @@ export function Hero() {
           data-hero
           className="mt-[26px] max-w-[56ch] text-[16.5px] leading-[1.75] text-ink/82 sm:text-justify"
         >
-          We support aircraft operators, maintenance organisations, airports and
+          We support aircraft operators, airports and
           government fleets across engineering and maintenance, the supply of
           parts and equipment, and the integration of ground and security
           systems. The common thread is documentation: anyone can find a part or
-          quote a job — the difference is what arrives with it, and whether the
+          quote a job the difference is what arrives with it, and whether the
           file still stands up when an auditor asks in two years&rsquo; time.
         </p>
 
