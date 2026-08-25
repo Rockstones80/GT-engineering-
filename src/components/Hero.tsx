@@ -16,7 +16,7 @@ export function Hero() {
           data-hero
           className="mt-[22px] font-display text-[clamp(2.75rem,7vw,76px)] leading-[1.02] font-normal tracking-[-0.5px] text-pretty"
         >
-          Engineering support and supply, held to the record.
+          Engineering support and supplier, held to the record.
         </h1>
 
         <p

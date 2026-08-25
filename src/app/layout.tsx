@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_AE",
     siteName: "GT Engineering Services",
-    title: "Engineering support and supply, held to the record.",
+    title: "Engineering support and supplier, held to the record.",
     description:
       "Maintenance and engineering support, parts supply, systems integration and the Stratose management platform — from Dubai, on documentation that stands up to audit.",
   },
