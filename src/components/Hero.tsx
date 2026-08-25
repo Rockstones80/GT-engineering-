@@ -32,9 +32,9 @@ export function Hero() {
         </p>
 
         <dl data-hero className="mt-11 border-y border-ink/18">
-          <div className="ruled -mx-5 grid-cols-2 sm:grid-cols-4">
+          <div className="ruled flush grid-cols-2 sm:grid-cols-4 md:[--flush:20px]">
             {STATS.map((stat) => (
-              <div key={stat.label} className="px-5 py-5">
+              <div key={stat.label} className="py-5">
                 <dd
                   className="tnum font-display text-[38px] leading-none"
                   data-count={stat.countTo}

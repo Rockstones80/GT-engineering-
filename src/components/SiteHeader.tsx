@@ -42,7 +42,10 @@ export function SiteHeader() {
           aria-hidden="true"
           className="aog-dot size-1.5 shrink-0 rounded-full"
         />
-        <span>AOG &amp; technical desk open — staffed around the clock</span>
+        <span className="sm:hidden">AOG desk — open 24/7</span>
+        <span className="hidden sm:inline">
+          AOG &amp; technical desk open — staffed around the clock
+        </span>
         <a
           href="tel:+971568233312"
           className="border-b border-gold-light/40 text-gold-light hover:text-white"
@@ -63,7 +66,7 @@ export function SiteHeader() {
         }`}
       >
         <div
-          className={`flex items-center gap-x-7 gap-y-4 transition-[padding] duration-300 ${
+          className={`flex items-center gap-x-3 gap-y-4 transition-[padding] duration-300 sm:gap-x-7 ${
             condensed ? "py-2.5" : "py-4"
           }`}
         >
@@ -78,7 +81,7 @@ export function SiteHeader() {
               <span className="font-sans text-[15px] font-bold tracking-[-0.2px] text-[#1c2b25]">
                 GT ENGINEERING
               </span>
-              <span className="font-sans text-[8.5px] font-medium tracking-[0.34em] text-[#1c2b25]/60">
+              <span className="hidden font-sans text-[8.5px] font-medium tracking-[0.34em] text-[#1c2b25]/60 min-[400px]:block">
                 SERVICES · DUBAI
               </span>
             </span>
@@ -98,9 +101,11 @@ export function SiteHeader() {
 
           <a
             href="#rfq"
-            className="ml-auto flex-none rounded-[4px] border border-gold px-[18px] py-[9px] font-sans text-xs uppercase tracking-[0.08em] whitespace-nowrap text-gold-deep transition-colors hover:bg-gold/10 hover:text-gold-press lg:ml-0"
+            className="ml-auto flex-none rounded-[4px] border border-gold px-3 py-2 font-sans text-[11px] uppercase tracking-[0.08em] whitespace-nowrap text-gold-deep transition-colors hover:bg-gold/10 hover:text-gold-press sm:px-[18px] sm:py-[9px] sm:text-xs lg:ml-0"
           >
-            Send an RFQ
+            {/* The CTA keeps its place on every width — only its label gives way */}
+            <span className="sm:hidden">RFQ</span>
+            <span className="hidden sm:inline">Send an RFQ</span>
           </a>
 
           <button
@@ -108,7 +113,7 @@ export function SiteHeader() {
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-controls="mobile-nav"
-            className="-mr-2 flex size-10 flex-none items-center justify-center rounded-[4px] text-ink/70 transition-colors hover:text-gold-deep lg:hidden"
+            className="-mr-2.5 flex size-11 flex-none items-center justify-center rounded-[4px] text-ink/70 transition-colors hover:text-gold-deep lg:hidden"
           >
             <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
             <svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true">

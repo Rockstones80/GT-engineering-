@@ -11,9 +11,9 @@ export function Platforms() {
         standfirstWidth="max-w-none"
       />
 
-      <div data-stagger-in="0.05" className="ruled -mx-[22px] mt-2 grid-cols-2 md:grid-cols-3 xl:grid-cols-6">
+      <div data-stagger-in="0.05" className="ruled flush mt-2 grid-cols-2 md:grid-cols-3 md:[--flush:22px] xl:grid-cols-6">
         {PLATFORMS.map((entry) => (
-          <div key={entry.group} className="px-[22px] py-[26px]">
+          <div key={entry.group} className="py-[26px]">
             <div className="font-sans text-[9.5px] uppercase tracking-[0.16em] text-ink/50">
               {entry.group}
             </div>

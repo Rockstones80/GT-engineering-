@@ -10,9 +10,9 @@ export function Capability() {
         standfirst="Six capability areas. Most programmes draw on more than one — which is the reason they sit inside a single company."
       />
 
-      <ol data-stagger-in="0.05" className="ruled -mx-[30px] grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <ol data-stagger-in="0.05" className="ruled flush grid-cols-1 sm:grid-cols-2 md:[--flush:30px] lg:grid-cols-3">
         {CAPABILITIES.map((item) => (
-          <li key={item.n} className="p-[30px]">
+          <li key={item.n} className="py-[30px]">
             <div className="tnum font-sans text-[10px] tracking-[0.18em] text-gold">
               {item.n}
             </div>

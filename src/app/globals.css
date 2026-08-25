@@ -26,6 +26,25 @@
     scroll-behavior: smooth;
   }
 
+  /* One gutter, named once. Every section pads by it and every full-bleed
+     grid pulls back by it, so the two can never disagree — which is exactly
+     how the ruled grids ended up 6px wider than the viewport on a phone. */
+  :root {
+    --gutter: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    :root {
+      --gutter: 2.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    :root {
+      --gutter: 3rem;
+    }
+  }
+
   body {
     background: var(--color-bg);
     color: var(--color-ink);
@@ -137,7 +156,25 @@
   }
 
   .section-x {
-    @apply px-6 md:px-10 lg:px-12;
+    padding-inline: var(--gutter);
+  }
+
+  /* Pulls a ruled grid out to the section margin so the outer cells' copy sits
+     flush with the heading above it, while the inner cells keep real padding
+     between columns.
+
+     `--flush` is the cell's inline padding AND the distance pulled back, and it
+     defaults to the gutter — which is the safety property: at that value the
+     grid's edge lands exactly on the viewport edge and can never exceed it.
+     A design that wants tighter columns overrides --flush at a breakpoint wide
+     enough to afford it. */
+  .flush {
+    --flush: var(--gutter);
+    margin-inline: calc(var(--flush) * -1);
+  }
+
+  .flush > * {
+    padding-inline: var(--flush);
   }
 }
 

@@ -34,9 +34,9 @@ export function Stratose() {
             </div>
           </div>
 
-          <dl data-stagger-in="0.05" className="ruled-paper -mx-[22px] grid-cols-1 sm:grid-cols-2">
+          <dl data-stagger-in="0.05" className="ruled-paper flush grid-cols-1 sm:grid-cols-2 sm:[--flush:22px]">
             {STRATOSE_MODULES.map((module) => (
-              <div key={module.title} className="px-[22px] py-[22px]">
+              <div key={module.title} className="py-[22px]">
                 <dt className="micro-gold">{module.title}</dt>
                 <dd className="mt-2.5 text-[13.5px] leading-[1.75] text-ink/75">
                   {module.body}

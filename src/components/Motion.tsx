@@ -148,26 +148,6 @@ export function Motion() {
         );
       });
 
-      /* ── A little drift on the hangar plate. Scaled up first so the frame
-            never runs out of image at either end of the scrub. ── */
-      gsap.utils.toArray<HTMLElement>("[data-parallax]").forEach((el) => {
-        gsap.set(el, { scale: 1.16 });
-        gsap.fromTo(
-          el,
-          { yPercent: -5 },
-          {
-            yPercent: 5,
-            ease: "none",
-            scrollTrigger: {
-              trigger: el.parentElement ?? el,
-              start: "top bottom",
-              end: "bottom top",
-              scrub: 0.6,
-            },
-          },
-        );
-      });
-
       /* Triggers cache their start/end positions at setup. The display:swap
          webfonts land after that and reflow the page, which would leave every
          position stale — measurably so on the long text sections. Re-measure
@@ -186,6 +166,35 @@ export function Motion() {
         });
       };
     });
+
+    /* Parallax is the one scrub-driven effect here, and a scrub means work on
+       every scroll frame. Phones are also where a 16% upscale of a full-bleed
+       photo costs the most to composite, and where mobile browsers resize the
+       viewport mid-scroll as the URL bar retracts — which shifts the very
+       distance the scrub is measured against. Desktop only; the plate still
+       gets its clip reveal everywhere. */
+    mm.add(
+      "(min-width: 768px) and (prefers-reduced-motion: no-preference)",
+      () => {
+        gsap.utils.toArray<HTMLElement>("[data-parallax]").forEach((el) => {
+          gsap.set(el, { scale: 1.16 });
+          gsap.fromTo(
+            el,
+            { yPercent: -5 },
+            {
+              yPercent: 5,
+              ease: "none",
+              scrollTrigger: {
+                trigger: el.parentElement ?? el,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 0.6,
+              },
+            },
+          );
+        });
+      },
+    );
 
     return () => mm.revert();
   });
